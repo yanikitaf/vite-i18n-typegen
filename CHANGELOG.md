@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.0.17
+
+### Patch Changes
+
+- 21cc2dc: readme
+
 ## 0.0.16
 
 ### Patch Changes
