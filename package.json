@@ -11,10 +11,7 @@
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci"
   },
-  "main": "dist/vite-translation-plugin.js",
-  "exports": {
-    ".": "./dist/vite-translation-plugin.js"
-  },
+  "main": "dist/index.js",
   "description": "Typegen for vue-i18n",
   "keywords": [
     "vue-i18n",
