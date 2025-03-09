@@ -1,1 +1,1 @@
-export { default } from './generate-types';
+export { default } from './generate-types.js';
