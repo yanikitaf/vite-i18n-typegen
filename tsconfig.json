@@ -9,6 +9,7 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
+    "noEmit": true,
 
     /* Strictness */
     "strict": true,
@@ -16,7 +17,8 @@
     "noImplicitOverride": true,
 
     /* If transpiling with TypeScript: */
-    "module": "NodeNext",
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,

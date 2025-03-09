@@ -6,6 +6,7 @@ export function flattenObject(
     (acc, [key, value]) => {
       const nestedKey = prefix ? `${prefix}.${key}` : key;
       if (typeof value === 'string') {
+        // @ts-ignore
         acc[nestedKey] = [...value.matchAll(/\{(\w+)\}/g)].map(
           ([, param]) => param,
         );

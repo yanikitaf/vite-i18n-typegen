@@ -3,7 +3,7 @@ import { validateInput } from './input-validator';
 import { findJsonFiles, readTranslationFile } from './file-system';
 import { flattenObject } from './translation-parser';
 import { generateTypeDefinitions } from './type-definition-generator';
-import { MESSAGES, Config } from './constants';
+import { MESSAGES, type Config } from './constants';
 import { promises as fs } from 'fs';
 import path from 'path';
 
