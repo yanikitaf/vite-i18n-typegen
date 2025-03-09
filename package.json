@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build",
-    "format": "prettier --write ."
+    "ci": "npm run build && npm run check-format && npm run check-exports",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
   },
+  "main": "dist/vite-translation-plugin.js",
   "description": "Typegen for vue-i18n",
   "keywords": [
     "vue-i18n",
@@ -28,6 +31,7 @@
   "type": "module",
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.4",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2"
   }
