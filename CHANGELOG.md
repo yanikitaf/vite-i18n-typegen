@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.0.12
+
+### Patch Changes
+
+- 934783b: fix import
+
 ## 0.0.11
 
 ### Patch Changes
