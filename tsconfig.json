@@ -18,6 +18,7 @@
 
     /* If transpiling with TypeScript: */
     "module": "Preserve",
+    "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
