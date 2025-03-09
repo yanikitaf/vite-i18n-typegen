@@ -1,6 +1,10 @@
 {
   "name": "vite-plugin-vue-i18n-typegen",
   "version": "0.0.1",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build"
+  },
   "description": "Typegen for vue-i18n",
   "keywords": [
     "vue-i18n",
