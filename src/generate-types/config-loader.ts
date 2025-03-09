@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { Config } from './constants';
+import type { Config } from './constants.js';
 
 const DEFAULT_CONFIG: Config = {
   INPUT_DIR: null,

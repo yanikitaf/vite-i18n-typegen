@@ -1,9 +1,9 @@
-import { loadConfig } from './config-loader';
-import { validateInput } from './input-validator';
-import { findJsonFiles, readTranslationFile } from './file-system';
-import { flattenObject } from './translation-parser';
-import { generateTypeDefinitions } from './type-definition-generator';
-import { MESSAGES, type Config } from './constants';
+import { loadConfig } from './config-loader.js';
+import { validateInput } from './input-validator.js';
+import { findJsonFiles, readTranslationFile } from './file-system.js';
+import { flattenObject } from './translation-parser.js';
+import { generateTypeDefinitions } from './type-definition-generator.js';
+import { MESSAGES, type Config } from './constants.js';
 import { promises as fs } from 'fs';
 import path from 'path';
 

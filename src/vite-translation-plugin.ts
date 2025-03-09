@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite';
-import generateTypes from './generate-types';
+import generateTypes from './generate-types/generate-types.js';
 
 type UserConfig = Record<string, unknown>;
 

@@ -1,2 +1,2 @@
-export * from './vite-translation-plugin';
-export * from './generate-types';
+export * from './vite-translation-plugin.js';
+export * from './generate-types/generate-types.js';
