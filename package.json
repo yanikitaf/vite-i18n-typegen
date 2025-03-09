@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue-i18n-typegen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "build": "tsc",
     "ci": "npm run build && npm run check-format && npm run check-exports && npm run lint",
