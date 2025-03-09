@@ -1,11 +1,11 @@
-import generateTypes from "./generate-types/generate-types";
-import { Plugin } from "vite";
+import generateTypes from './generate-types/generate-types';
+import { Plugin } from 'vite';
 
 type UserConfig = Record<string, unknown>;
 
 export default function translationPlugin(userConfig: UserConfig = {}): Plugin {
   return {
-    name: "translation-types-generator",
+    name: 'translation-types-generator',
     configureServer(server) {
       const loadConfig = async (): Promise<UserConfig> => {
         try {
@@ -23,7 +23,7 @@ export default function translationPlugin(userConfig: UserConfig = {}): Plugin {
           if (error instanceof Error) {
             server.config.logger.error(error.message);
           } else {
-            server.config.logger.error("An unknown error occurred");
+            server.config.logger.error('An unknown error occurred');
           }
         });
     },

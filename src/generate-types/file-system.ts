@@ -1,9 +1,9 @@
-import { promises as fs } from "fs";
-import path from "path";
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export async function findJsonFiles(
   dir: string,
-  fileExtension: string
+  fileExtension: string,
 ): Promise<string[]> {
   console.log(`Поиск JSON файлов в директории: ${dir}`);
   const entries = await fs.readdir(dir);
@@ -14,23 +14,23 @@ export async function findJsonFiles(
       return stats.isDirectory()
         ? findJsonFiles(fullPath, fileExtension)
         : fullPath.endsWith(fileExtension)
-        ? [fullPath]
-        : [];
-    })
+          ? [fullPath]
+          : [];
+    }),
   );
   return files.flat();
 }
 
 export async function readTranslationFile(
-  filePath: string
+  filePath: string,
 ): Promise<Record<string, any>> {
   console.log(`Чтение файла перевода: ${filePath}`);
   try {
-    const content = await fs.readFile(filePath, "utf-8");
+    const content = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(content);
   } catch (error) {
     throw new Error(
-      `Ошибка при обработке файла ${filePath}: ${(error as Error).message}`
+      `Ошибка при обработке файла ${filePath}: ${(error as Error).message}`,
     );
   }
 }

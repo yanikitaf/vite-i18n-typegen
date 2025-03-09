@@ -1,19 +1,19 @@
 export function generateTypeDefinitions(
-  keyParamsMap: Record<string, string[]>
+  keyParamsMap: Record<string, string[]>,
 ): string {
-  console.log("Генерация TypeScript определений...");
+  console.log('Генерация TypeScript определений...');
   const translationKeys = Object.keys(keyParamsMap)
     .map((key) => `  | "${key}"`)
-    .join("\n");
+    .join('\n');
   const paramsMap = Object.entries(keyParamsMap)
     .map(
       ([key, params]) =>
         `  "${key}": ${
           params.length > 0
-            ? `{ ${params.map((p) => `${p}: string`).join("; ")} }`
-            : "undefined"
-        };`
+            ? `{ ${params.map((p) => `${p}: string`).join('; ')} }`
+            : 'undefined'
+        };`,
     )
-    .join("\n");
+    .join('\n');
   return `export type TranslationKeys =\n${translationKeys};\n\nexport type TranslationParamsMap = {\n${paramsMap}\n};\n`;
 }

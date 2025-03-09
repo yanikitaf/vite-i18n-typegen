@@ -1,5 +1,5 @@
-import { MESSAGES } from "./constants";
-import { promises as fs } from "fs";
+import { MESSAGES } from './constants';
+import { promises as fs } from 'fs';
 
 export async function validateInput(dirPath: string | null): Promise<void> {
   console.log(`Проверка входных данных: ${dirPath}`);

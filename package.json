@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build"
+    "ci": "npm run build",
+    "format": "prettier --write ."
   },
   "description": "Typegen for vue-i18n",
   "keywords": [
@@ -27,6 +28,7 @@
   "type": "module",
   "license": "MIT",
   "devDependencies": {
+    "prettier": "^3.5.3",
     "typescript": "^5.8.2"
   }
 }
