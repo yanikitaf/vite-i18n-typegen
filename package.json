@@ -1,0 +1,25 @@
+{
+  "name": "vite-plugin-vue-i18n-typegen",
+  "version": "0.0.1",
+  "description": "Typegen for vue-i18n",
+  "keywords": [
+    "vue-i18n",
+    "i18n",
+    "typescript",
+    "vite-plugin-vue-i18n-typegen"
+  ],
+  "homepage": "https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen",
+  "bugs": {
+    "url": "https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen/issues"
+  },
+  "author": "Nikita Fil <ya.nek@icloud.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "license": "MIT"
+}
