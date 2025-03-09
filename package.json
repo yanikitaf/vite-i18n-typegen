@@ -12,11 +12,6 @@
     "prepublishOnly": "npm run ci"
   },
   "main": "dist/vite-translation-plugin.js",
-  "exports": {
-    "./generate-types": "./dist/generate-types/generate-types.js",
-    "./vite-translation-plugin": "./dist/vite-translation-plugin.js",
-    ".": "./dist/vite-translation-plugin.js"
-  },
   "module": "./dist/vite-translation-plugin.js",
   "description": "Typegen for vue-i18n",
   "keywords": [
