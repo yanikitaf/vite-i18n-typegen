@@ -1,10 +1,3 @@
-export interface Config {
-  inputDir: string | null;
-  outputPath: string;
-  outputFileName: string;
-  jsonFileExtension: string;
-}
-
 export const MESSAGES = {
   ERROR: {
     NO_INPUT_DIR:

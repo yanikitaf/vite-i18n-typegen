@@ -1,13 +1,17 @@
-import { loadConfig } from './config-loader.js';
-import { validateInput } from './input-validator.js';
-import { findJsonFiles, readTranslationFile } from './file-system.js';
-import { flattenObject } from './translation-parser.js';
-import { generateTypeDefinitions } from './type-definition-generator.js';
-import { MESSAGES, type Config } from './constants.js';
+import { MESSAGES } from './constants.js';
 import { promises as fs } from 'fs';
 import path from 'path';
+import type { Config } from '../types.js';
+import { flattenObject } from './translationParser/flattenObject.js';
+import { loadConfig } from './loadConfig/loadConfig.js';
+import { findJsonFiles } from './findJsonFiles/findJsonFiles.js';
+import { readTranslationFile } from './readTranslationFile/readTranslationFile.js';
+import { validateInput } from './validateInput/validateInput.js';
+import { generateTypeDefinitions } from './generateTypeDefinitions/generateTypeDefinitions.js';
 
-async function generateTypes(userConfig: Partial<Config> = {}): Promise<void> {
+const generateTypes = async (
+  userConfig: Partial<Config> = {},
+): Promise<void> => {
   try {
     console.log('Запуск генерации типов...');
     const config = await loadConfig();
@@ -45,6 +49,6 @@ async function generateTypes(userConfig: Partial<Config> = {}): Promise<void> {
     );
     process.exit(1);
   }
-}
+};
 
 export default generateTypes;

@@ -20,17 +20,3 @@ export async function findJsonFiles(
   );
   return files.flat();
 }
-
-export async function readTranslationFile(
-  filePath: string,
-): Promise<Record<string, any>> {
-  console.log(`Чтение файла перевода: ${filePath}`);
-  try {
-    const content = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(content);
-  } catch (error) {
-    throw new Error(
-      `Ошибка при обработке файла ${filePath}: ${(error as Error).message}`,
-    );
-  }
-}

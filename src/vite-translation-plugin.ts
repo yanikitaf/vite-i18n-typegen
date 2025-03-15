@@ -1,6 +1,6 @@
 import type { Plugin } from 'vite';
+import type { Config } from './types.js';
 import generateTypes from './generate-types/generate-types.js';
-import type { Config } from './generate-types/constants.js';
 
 type UserConfig = Partial<Config>;
 

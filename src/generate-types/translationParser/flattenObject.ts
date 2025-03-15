@@ -1,7 +1,7 @@
-export function flattenObject(
+export const flattenObject = (
   obj: Record<string, any>,
   prefix = '',
-): Record<string, string[]> {
+): Record<string, string[]> => {
   return Object.entries(obj).reduce(
     (acc, [key, value]) => {
       const nestedKey = prefix ? `${prefix}.${key}` : key;
@@ -17,4 +17,4 @@ export function flattenObject(
     },
     {} as Record<string, string[]>,
   );
-}
+};

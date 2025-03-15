@@ -1,7 +1,7 @@
-import { MESSAGES } from './constants.js';
 import { promises as fs } from 'fs';
+import { MESSAGES } from '../constants.js';
 
-export async function validateInput(dirPath: string | null): Promise<void> {
+export const validateInput = async (dirPath: string | null): Promise<void> => {
   console.log(`Проверка входных данных: ${dirPath}`);
   if (!dirPath) throw new Error(MESSAGES.ERROR.NO_INPUT_DIR);
   try {
@@ -9,4 +9,4 @@ export async function validateInput(dirPath: string | null): Promise<void> {
   } catch {
     throw new Error(MESSAGES.ERROR.INVALID_DIR);
   }
-}
+};

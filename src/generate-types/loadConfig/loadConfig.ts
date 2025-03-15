@@ -1,15 +1,9 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import type { Config } from './constants.js';
+import type { Config } from '../../types.js';
+import { DEFAULT_CONFIG } from './constants.js';
 
-const DEFAULT_CONFIG: Config = {
-  inputDir: null,
-  outputPath: './',
-  outputFileName: 'translations.d.ts',
-  jsonFileExtension: '.json',
-};
-
-export async function loadConfig(): Promise<Config> {
+export const loadConfig = async (): Promise<Config> => {
   console.log('Загрузка конфигурации...');
   const configPath = path.join(process.cwd(), 'translation-config.json');
   try {
@@ -19,4 +13,4 @@ export async function loadConfig(): Promise<Config> {
   } catch {
     return DEFAULT_CONFIG;
   }
-}
+};
