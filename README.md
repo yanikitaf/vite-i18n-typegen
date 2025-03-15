@@ -105,7 +105,12 @@ export type TranslationParamsMap = {
 
 ```typescript
 // Импортируем сгенерированные типы
-// import type { TranslationKeys, TranslationParamsMap } from "./generated-types/translations";
+import type {
+  TranslationKeys,
+  TranslationParamsMap,
+} from './generated-types/translations';
+// Импортируем утилитарный тип из vite-plugin-vue-i18n-typegen
+import type { TranslateFunction } from 'vite-plugin-vue-i18n-typegen';
 
 // TranslateFunction предоставляется плагином
 declare const translate: TranslateFunction<

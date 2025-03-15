@@ -4,7 +4,7 @@ import type { Config } from './generate-types/constants.js';
 
 type UserConfig = Partial<Config>;
 
-export default function translationPlugin(userConfig: UserConfig = {}): Plugin {
+export const translationPlugin = (userConfig: UserConfig = {}): Plugin => {
   return {
     name: 'translation-types-generator',
     configureServer(server) {
@@ -29,4 +29,4 @@ export default function translationPlugin(userConfig: UserConfig = {}): Plugin {
         });
     },
   };
-}
+};
