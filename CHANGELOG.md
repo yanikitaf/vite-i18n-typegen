@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.1.2
+
+### Patch Changes
+
+- tests
+
 ## 0.1.1
 
 ### Patch Changes
