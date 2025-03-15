@@ -1,8 +1,8 @@
 export interface Config {
-  INPUT_DIR: string | null;
-  OUTPUT_PATH: string;
-  OUTPUT_FILE_NAME: string;
-  JSON_FILE_EXTENSION: string;
+  inputDir: string | null;
+  outputPath: string;
+  outputFileName: string;
+  jsonFileExtension: string;
 }
 
 export const MESSAGES = {

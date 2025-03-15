@@ -13,6 +13,7 @@
   },
   "main": "dist/vite-translation-plugin.js",
   "module": "./dist/vite-translation-plugin.js",
+  "types": "types/index.d.ts",
   "description": "Typegen for vue-i18n",
   "keywords": [
     "vue-i18n",
@@ -38,7 +39,9 @@
     "@arethetypeswrong/cli": "^0.17.4",
     "@changesets/cli": "^2.28.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.1"
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "vite": "^6.2.2"
   }
 }

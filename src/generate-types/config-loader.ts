@@ -3,10 +3,10 @@ import path from 'path';
 import type { Config } from './constants.js';
 
 const DEFAULT_CONFIG: Config = {
-  INPUT_DIR: null,
-  OUTPUT_PATH: './',
-  OUTPUT_FILE_NAME: 'translations.d.ts',
-  JSON_FILE_EXTENSION: '.json',
+  inputDir: null,
+  outputPath: './',
+  outputFileName: 'translations.d.ts',
+  jsonFileExtension: '.json',
 };
 
 export async function loadConfig(): Promise<Config> {

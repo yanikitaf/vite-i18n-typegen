@@ -1,7 +1,8 @@
 import type { Plugin } from 'vite';
 import generateTypes from './generate-types/generate-types.js';
+import type { Config } from './generate-types/constants.js';
 
-type UserConfig = Record<string, unknown>;
+type UserConfig = Partial<Config>;
 
 export default function translationPlugin(userConfig: UserConfig = {}): Plugin {
   return {
