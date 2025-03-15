@@ -23,12 +23,12 @@ yarn  add  vite-plugin-vue-i18n-typegen  --dev
 ```typescript
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import VueI18nTypegen from 'vite-plugin-vue-i18n-typegen';
+import { translationPlugin } from 'vite-plugin-vue-i18n-typegen';
 
 export default defineConfig({
   plugins: [
     vue(),
-    VueI18nTypegen({
+    translationPlugin({
       // Опции плагина
     }),
   ],
@@ -90,14 +90,12 @@ export type TranslationKeys =
   | 'messages.profile.description';
 
 export type TranslationParamsMap = {
-  'messages.notification': { count: string; count: string; count: string };
+  'messages.notification': { count: string };
   'messages.lastLogin': { date: string };
   'messages.profile.title': undefined;
   'messages.profile.description': { name: string };
 };
 ```
-
-> **Примечание:** Обратите внимание, что в `TranslationParamsMap` для ключа `"messages.notification"` параметр `count` повторяется несколько раз. Это особенность обработки параметров. В реальной ситуации типизация будет строго соответствовать переданным параметрам.
 
 ## Пример использования
 
