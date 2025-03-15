@@ -13,7 +13,7 @@
   },
   "main": "dist/vite-translation-plugin.js",
   "module": "./dist/vite-translation-plugin.js",
-  "types": "types/index.d.ts",
+  "types": "dist/translation-utils.d.ts",
   "description": "Typegen for vue-i18n",
   "keywords": [
     "vue-i18n",
