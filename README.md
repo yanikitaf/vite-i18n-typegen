@@ -23,12 +23,12 @@ yarn  add  vite-plugin-vue-i18n-typegen  --dev
 ```typescript
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { translationPlugin } from 'vite-plugin-vue-i18n-typegen';
+import vueTranslatePlugin from 'vite-plugin-vue-i18n-typegen';
 
 export default defineConfig({
   plugins: [
     vue(),
-    translationPlugin({
+    vueTranslatePlugin({
       // Опции плагина
     }),
   ],
@@ -117,10 +117,17 @@ declare const translate: TranslateFunction<
   TranslationParamsMap
 >;
 
+// использовать типизацию можете на ваше усмотрение
+const translate = i18n.global.t as TranslateFunction<
+  TranslationKeys,
+  TranslationParamsMap
+>;
+
+
 // Примеры использования:
-translate('messages.notification', { count: '1' }); // Всё корректно: для ключа ожидается параметр count
-translate('messages.notification'); // Также корректно: параметр count не является обязательным
-translate('messages.notification', { count: '1', name: 'John' }); // Ошибка: для этого ключа параметр name не предусмотрен
+translate('messages.notification', { count: '1' }); // ✅ Всё корректно: для ключа ожидается параметр count
+translate('messages.notification'); // ✅ Также корректно: параметр count не является обязательным
+translate('messages.notification', { count: '1', name: 'John' }); // ❌ Ошибка: для этого ключа параметр name не предусмотрен
 ```
 
 ## Заключение
