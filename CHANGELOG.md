@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.1.0
+
+### Minor Changes
+
+- b710356: Улучшена типизация входных параметров для плагина
+
 ## 0.0.17
 
 ### Patch Changes
