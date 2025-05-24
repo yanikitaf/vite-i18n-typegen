@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue-i18n-typegen",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "build": "tsdown --from-vite",
     "test": "vitest",
