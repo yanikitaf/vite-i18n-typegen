@@ -117,6 +117,12 @@ declare const translate: TranslateFunction<
   TranslationParamsMap
 >;
 
+// использовать типизацию можете на ваше усмотрение
+const translate = i18n.global.t as TranslateFunction<
+  TranslationKeys,
+  TranslationParamsMap
+>;
+
 // Примеры использования:
 translate('messages.notification', { count: 1 }); // Всё корректно: для ключа ожидается параметр count
 translate('messages.notification'); // Также корректно: параметр count не является обязательным
