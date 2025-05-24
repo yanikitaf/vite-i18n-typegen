@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.3.0
+
+### Minor Changes
+
+- bdb3f67: сборка проекта через tsdown, улучшение типизация шаблонов переводов и понижение требования для vite
+
 ## 0.1.2
 
 ### Patch Changes
