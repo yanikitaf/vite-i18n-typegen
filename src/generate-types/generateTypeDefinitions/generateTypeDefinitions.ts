@@ -9,11 +9,10 @@ export const generateTypeDefinitions = (
 
   const paramsMap = Object.entries(keyParamsMap)
     .map(([key, params]) => {
-      // Убираем дубликаты с помощью Set
       const uniqueParams = [...new Set(params)];
       return `  "${key}": ${
         uniqueParams.length > 0
-          ? `{ ${uniqueParams.map((p) => `${p}: string`).join('; ')} }`
+          ? `{ ${uniqueParams.map((p) => `${p}: string | number | Date`).join('; ')} }`
           : 'undefined'
       };`;
     })

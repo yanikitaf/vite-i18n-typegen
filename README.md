@@ -13,7 +13,7 @@ npm  install  vite-plugin-vue-i18n-typegen  --save-dev
 или
 
 ```bash
-yarn  add  vite-plugin-vue-i18n-typegen  --dev
+yarn  add -D  vite-plugin-vue-i18n-typegen
 ```
 
 ## Использование
@@ -90,10 +90,10 @@ export type TranslationKeys =
   | 'messages.profile.description';
 
 export type TranslationParamsMap = {
-  'messages.notification': { count: string };
-  'messages.lastLogin': { date: string };
+  'messages.notification': { count: string | number | Date };
+  'messages.lastLogin': { date: string | number | Date };
   'messages.profile.title': undefined;
-  'messages.profile.description': { name: string };
+  'messages.profile.description': { name: string | number | Date };
 };
 ```
 
@@ -118,7 +118,7 @@ declare const translate: TranslateFunction<
 >;
 
 // Примеры использования:
-translate('messages.notification', { count: '1' }); // Всё корректно: для ключа ожидается параметр count
+translate('messages.notification', { count: 1 }); // Всё корректно: для ключа ожидается параметр count
 translate('messages.notification'); // Также корректно: параметр count не является обязательным
 translate('messages.notification', { count: '1', name: 'John' }); // Ошибка: для этого ключа параметр name не предусмотрен
 ```
