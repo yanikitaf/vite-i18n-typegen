@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.4.0
+
+### Minor Changes
+
+- 78f6c3c: update tsdom configuration
+
 ## 0.3.1
 
 ### Patch Changes
