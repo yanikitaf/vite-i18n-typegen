@@ -8,64 +8,68 @@ import { readTranslationFile } from './readTranslationFile/readTranslationFile.j
 import { validateInput } from './validateInput/validateInput.js';
 import { generateTypeDefinitions } from './generateTypeDefinitions/generateTypeDefinitions.js';
 
-const generateTypes = async (
+const extractKeyParams = (translations: Record<string, string>): string[] => {
+  const allParams = new Set<string>();
+  for (const text of Object.values(translations)) {
+    const params = extractParamsFromText(text);
+    params.forEach((p) => allParams.add(p));
+  }
+  return Array.from(allParams);
+};
+
+const extractParamsFromText = (text: string): string[] => {
+  const params: string[] = [];
+  const matches = text.matchAll(/\{(\w+)\}/g);
+  if (matches) {
+    for (const match of matches) {
+      if (match[1]) {
+        params.push(match[1]);
+      }
+    }
+  }
+  return params;
+};
+
+const processTranslations = async (
   userConfig: Partial<Config> = {},
 ): Promise<void> => {
   try {
     console.log('Запуск генерации типов...');
 
-    // Загрузка и объединение конфигураций
+    // 1. Load and merge configurations
     const config = await loadConfig();
     const finalConfig: Config = {
       ...config,
       ...userConfig,
     };
 
-    // Валидация входных данных
+    // 2. Validate input
     const translationsDir = process.argv[2] || finalConfig.inputDir;
     await validateInput(translationsDir!);
 
-    // Создание выходной директории
-    await fs.mkdir(finalConfig.outputPath, { recursive: true });
-
-    // Поиск и обработка JSON-файлов
+    // 3. Find JSON files
     const jsonFiles = await findJsonFiles(
       translationsDir!,
-      finalConfig.jsonFileExtension,
+      finalConfig.localeFilesExtension,
     );
-
     console.log(`Найдено файлов: ${jsonFiles.length}`);
 
-    // Чтение и обработка переводов
+    // 4. Read and process translations
     const allTranslations = await Promise.all(
       jsonFiles.map(({ path: filePath, lang }) =>
         readTranslationFile(filePath, lang),
       ),
     );
 
-    // Сбор метаданных
-    const { descriptions, keyParamsMap } = allTranslations.flat().reduce(
-      (acc, { key, translations }) => {
-        const allParams = new Set<string>();
+    // 5. Collect metadata
 
-        Object.values(translations).forEach((text) => {
-          // Явно указываем тип для параметра
-          const matches = [...text.matchAll(/\{(\w+)\}/g)];
-          const params = matches.map((m) => m[1] as string); // Явное приведение типа
-          params.forEach((p) => allParams.add(p));
-        });
+    const flattenedTranslations = allTranslations.flat();
 
-        // Остальная логика без изменений
-        if (!acc.descriptions[key]) {
-          acc.descriptions[key] = {};
-        }
-        Object.assign(acc.descriptions[key], translations);
-
-        const existingParams = acc.keyParamsMap[key] || [];
-        acc.keyParamsMap[key] = [
-          ...new Set([...existingParams, ...Array.from(allParams)]),
-        ];
-
+    const { descriptions, keyParamsMap } = flattenedTranslations.reduce(
+      (acc, item) => {
+        const { key, translations } = item;
+        acc.descriptions[key] = { ...acc.descriptions[key], ...translations };
+        acc.keyParamsMap[key] = extractKeyParams(translations);
         return acc;
       },
       {
@@ -74,14 +78,16 @@ const generateTypes = async (
       },
     );
 
-    // Генерация и запись типов
+    // 6. Generate and write type definitions
     const outputPath = path.join(
       finalConfig.outputPath,
       finalConfig.outputFileName,
     );
-
-    const tsContent = generateTypeDefinitions(keyParamsMap, descriptions);
-
+    const tsContent = generateTypeDefinitions(
+      keyParamsMap,
+      descriptions,
+      finalConfig,
+    );
     await fs.writeFile(outputPath, tsContent);
     console.log(`${MESSAGES.SUCCESS} ${outputPath}`);
   } catch (error) {
@@ -95,4 +101,4 @@ const generateTypes = async (
   }
 };
 
-export default generateTypes;
+export default processTranslations;

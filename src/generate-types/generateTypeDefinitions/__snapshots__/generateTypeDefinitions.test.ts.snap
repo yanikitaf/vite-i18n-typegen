@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generateTypeDefinitions > Snapshot: полная структура 1`] = `
+"export type TranslationKeys = "common.welcome"
+
+export type TranslationParamsMap = {
+  "common.welcome": undefined;
+};
+
+export interface TranslateFunctionDocs {
+  /**
+   * Welcome! / Добро пожаловать!
+   *
+   * @translations
+   * | lang | translation       |
+   * | ---- | ----------------- |
+   * | en   | Welcome!          |
+   * | ru   | Добро пожаловать! |
+   */
+(key: "common.welcome"): string;
+}"
+`;
+
+exports[`generateTypeDefinitions > Объединяет параметры из всех языков 1`] = `
+"export type TranslationKeys = "test.key"
+
+export type TranslationParamsMap = {
+  "test.key": { count: string | number | Date };
+};
+
+export interface TranslateFunctionDocs {
+  /**
+   * {{count}} {{total}} / {{count}}
+   *
+   * @translations
+   * | lang | translation         |
+   * | ---- | ------------------- |
+   * | en   | {{count}} {{total}} |
+   * | ru   | {{count}}           |
+   */
+(key: "test.key", params: { count: string | number | Date }): string;
+}"
+`;

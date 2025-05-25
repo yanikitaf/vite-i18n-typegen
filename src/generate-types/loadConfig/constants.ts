@@ -4,5 +4,9 @@ export const DEFAULT_CONFIG: Config = {
   inputDir: null,
   outputPath: './',
   outputFileName: 'translations.d.ts',
-  jsonFileExtension: '.json',
+  localeFilesExtension: '.json',
+  generateDocs: true,
+  generateKeys: true,
+  generateParams: true,
+  preferredLangOrder: ['sad'],
 };
