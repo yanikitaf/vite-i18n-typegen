@@ -29,5 +29,5 @@
     "lib": ["es2022"]
   },
   "include": ["src"],
-  "exclude": ["tsdown.config.ts", "node_modules"]
+  "exclude": ["tsdown.config.ts", "node_modules", "**/*.test.ts"]
 }
