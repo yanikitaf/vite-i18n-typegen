@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.6.0
+
+### Minor Changes
+
+- 875893f: новые поля в конфиге
+
 ## 0.5.0
 
 ### Minor Changes
