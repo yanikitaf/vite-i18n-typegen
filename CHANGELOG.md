@@ -1,4 +1,10 @@
-# vite-plugin-vue-i18n-typegen
+# vite-i18n-typegen
+
+## 0.7.0
+
+### Minor Changes
+
+- b173862: переименована репа
 
 ## 0.6.0
 

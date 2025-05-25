@@ -1,6 +1,6 @@
 {
-  "name": "vite-plugin-vue-i18n-typegen",
-  "version": "0.6.0",
+  "name": "vite-i18n-typegen",
+  "version": "0.7.0",
   "scripts": {
     "build": "tsdown --from-vite",
     "test": "vitest",
@@ -27,16 +27,16 @@
     "vue-i18n",
     "i18n",
     "typescript",
-    "vite-plugin-vue-i18n-typegen"
+    "vite-i18n-typegen"
   ],
-  "homepage": "https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen",
+  "homepage": "https://github.com/yanikitaf/vite-i18n-typegen",
   "bugs": {
-    "url": "https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen/issues"
+    "url": "https://github.com/yanikitaf/vite-i18n-typegen/issues"
   },
   "author": "Nikita Fil <ya.nek@icloud.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen.git"
+    "url": "git+https://github.com/yanikitaf/vite-i18n-typegen.git"
   },
   "type": "module",
   "license": "MIT",
