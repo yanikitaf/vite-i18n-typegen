@@ -1,5 +1,11 @@
 # vite-plugin-vue-i18n-typegen
 
+## 0.5.0
+
+### Minor Changes
+
+- 2342e10: добавлена генерация TranslateFunctionDocs для добавления js doc к функциям перевода
+
 ## 0.4.0
 
 ### Minor Changes
