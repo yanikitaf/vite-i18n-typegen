@@ -1,10 +1,10 @@
-vite-plugin-vue-i18n-typegen 🌍✨
+vite-i18n-typegen 🌍✨
 ================================
 
-`vite-plugin-vue-i18n-typegen` — революционный плагин для Vite, который превращает ваши JSON-переводы в строго типизированный TypeScript код с интегрированной документацией. Забудьте об ошибках в ключах и параметрах — теперь ваши переводы защищены типами и самодокументированы!
+`vite-i18n-typegen` — революционный плагин для Vite, который превращает ваши JSON-переводы в строго типизированный TypeScript код с интегрированной документацией. Забудьте об ошибках в ключах и параметрах — теперь ваши переводы защищены типами и самодокументированы!
 
-[![npm version](https://img.shields.io/npm/v/vite-plugin-vue-i18n-typegen.svg)](https://www.npmjs.com/package/vite-plugin-vue-i18n-typegen)  
-[![license](https://img.shields.io/npm/l/vite-plugin-vue-i18n-typegen.svg)](https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/vite-i18n-typegen.svg)](https://www.npmjs.com/package/vite-i18n-typegen)  
+[![license](https://img.shields.io/npm/l/vite-i18n-typegen.svg)](https://github.com/yanikitaf/vite-i18n-typegen/blob/main/LICENSE)
 
 🚀 Возможности
 --------------
@@ -26,13 +26,13 @@ vite-plugin-vue-i18n-typegen 🌍✨
 ------------
 
 ```bash
-npm  install  vite-plugin-vue-i18n-typegen  --save-dev
+npm  install  vite-i18n-typegen  --save-dev
 ```
 
 или
 
 ```bash
-yarn  add -D  vite-plugin-vue-i18n-typegen
+yarn  add -D  vite-i18n-typegen
 ```
 
 ⚙️ Конфигурация
@@ -43,7 +43,7 @@ yarn  add -D  vite-plugin-vue-i18n-typegen
 ```typescript
 
 import { defineConfig } from 'vite';
-import { translationPlugin } from 'vite-plugin-vue-i18n-typegen';
+import { translationPlugin } from 'vite-i18n-typegen';
 
 export default defineConfig({
   plugins: [
@@ -199,13 +199,11 @@ export interface TranslateFunctionDocs {
     
 *   🧩 **Простая интеграция** — подключил и забыл
     
-*   🔥 **Поддержка Vue 3** — современное решение для современных проектов
-    
 
 👥 Сообщество
 -------------
 
-Нашли баг или есть предложение? [Создайте issue](https://github.com/yanikitaf/vite-plugin-vue-i18n-typegen/issues)!
+Нашли баг или есть предложение? [Создайте issue](https://github.com/yanikitaf/vite-i18n-typegen/issues)!
 
 Хотите помочь с развитием? Форки и пул-реквесты приветствуются!
 
