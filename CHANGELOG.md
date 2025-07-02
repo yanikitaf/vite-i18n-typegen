@@ -1,5 +1,11 @@
 # vite-i18n-typegen
 
+## 0.8.0
+
+### Minor Changes
+
+- 5c35c76: add include patterns
+
 ## 0.7.0
 
 ### Minor Changes
