@@ -23,13 +23,13 @@ export const translationPlugin = (userConfig: UserConfig = {}): Plugin => {
   };
 
   return {
-    name: 'vite-plugin-vue-i18n-typegen',
+    name: 'vite-i18n-typegen',
     configureServer(server) {
       try {
         safeGenerateTypes();
       } catch (error) {
         server.config.logger.error(
-          '[vite-plugin-vue-i18n-typegen] Initial type generation failed',
+          '[vite-i18n-typegen] Initial type generation failed',
         );
       }
 
@@ -39,15 +39,25 @@ export const translationPlugin = (userConfig: UserConfig = {}): Plugin => {
 
       try {
         server.watcher
-          .add(`**/*${config.localeFilesExtension}`)
+          .add(
+            config.includePatterns?.length
+              ? config.includePatterns
+              : [`**/*${config.localeFilesExtension}`],
+          )
           .on('change', (path) => {
-            if (path.endsWith(config.localeFilesExtension ?? '.json')) {
+            const patterns = config.includePatterns ?? [
+              `**/*${config.localeFilesExtension}`,
+            ];
+            const matched = patterns.some((pattern) =>
+              path.endsWith(pattern.replace('**/*', '')),
+            );
+            if (matched) {
               safeGenerateTypes();
             }
           });
       } catch (error) {
         server.config.logger.error(
-          '[vite-plugin-vue-i18n-typegen] File watcher setup failed',
+          '[vite-i18n-typegen] File watcher setup failed',
         );
       }
     },

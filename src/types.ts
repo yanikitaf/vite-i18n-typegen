@@ -8,4 +8,5 @@ export interface Config {
   generateDocs: boolean;
   preferredLangOrder: string[];
   generateOnChange?: boolean;
+  includePatterns?: string[];
 }

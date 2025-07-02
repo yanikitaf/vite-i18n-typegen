@@ -51,6 +51,7 @@ const processTranslations = async (
     const jsonFiles = await findJsonFiles(
       translationsDir!,
       finalConfig.localeFilesExtension,
+      finalConfig.includePatterns,
     );
     console.log(`Найдено файлов: ${jsonFiles.length}`);
 
