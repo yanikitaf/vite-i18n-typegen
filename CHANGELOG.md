@@ -1,5 +1,11 @@
 # vite-i18n-typegen
 
+## 0.9.0
+
+### Minor Changes
+
+- 2dfed05: add strictMode
+
 ## 0.8.0
 
 ### Minor Changes
