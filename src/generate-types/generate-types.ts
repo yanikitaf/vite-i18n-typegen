@@ -95,6 +95,7 @@ const processTranslations = async (
   } catch (error) {
     const errorMessage = (error as Error).message;
     console.error(
+      '[vite-i18n-typegen]',
       errorMessage.startsWith('❌')
         ? errorMessage
         : `${MESSAGES.ERROR.GENERIC} ${errorMessage}`,
