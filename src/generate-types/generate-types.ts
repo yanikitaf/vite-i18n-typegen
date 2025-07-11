@@ -32,6 +32,7 @@ const extractParamsFromText = (text: string): string[] => {
 
 const processTranslations = async (
   userConfig: Partial<Config> = {},
+  strictMode = true,
 ): Promise<void> => {
   try {
     console.log('Запуск генерации типов...');
@@ -98,7 +99,9 @@ const processTranslations = async (
         ? errorMessage
         : `${MESSAGES.ERROR.GENERIC} ${errorMessage}`,
     );
-    process.exit(1);
+    if (strictMode) {
+      process.exit(1);
+    }
   }
 };
 

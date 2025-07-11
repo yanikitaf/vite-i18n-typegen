@@ -13,10 +13,10 @@ export const translationPlugin = (userConfig: UserConfig = {}): Plugin => {
 
   const safeGenerateTypes = () => {
     try {
-      generateTypes(config);
+      generateTypes(config, false);
     } catch (error) {
       console.error(
-        '[translation-plugin] Type generation failed:',
+        '[vite-i18n-typegen] Type generation failed:',
         error instanceof Error ? error.message : error,
       );
     }
